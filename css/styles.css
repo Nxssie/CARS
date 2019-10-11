@@ -1,3 +1,10 @@
 #logo{
   width: 75px;
 }
+#intro{
+  margin-right: 400px;
+}
+#navbar2{
+  position: sticky;
+  top: 0;
+}
