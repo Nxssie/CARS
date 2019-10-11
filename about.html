@@ -14,8 +14,10 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -34,10 +36,15 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="about.html">About
-              <span class="sr-only">(current)</span>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown class">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              About
             </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="business">La empresa</a>
+              <a class="dropdown-item" href="models">Nuestros modelos</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html">Services</a>
@@ -59,14 +66,12 @@
     </p>
   </div>
 
-<br/><br/><br/><br/>
+  <br /><br /><br /><br />
   <div class="container">
     <h3>¿Donde nos encontramos?</h3>
-    <br/>
-    <iframe
-     src="https://www.google.com/maps/d/embed?mid=119HU-9qK5S7OpwbDuCmtNvdMGhiAnYlR&hl=es" 
-     width="640" 
-     height="480">
+    <br />
+    <iframe src="https://www.google.com/maps/d/embed?mid=119HU-9qK5S7OpwbDuCmtNvdMGhiAnYlR&hl=es" width="640"
+      height="480">
     </iframe>
   </div>
   <!-- /.container -->

@@ -12,10 +12,12 @@
 
   <!--Own CSS-->
   <link rel="stylesheet" href="css/styles.css">
-  
+
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -36,8 +38,15 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              About
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="business">La empresa</a>
+              <a class="dropdown-item" href="models">Nuestros modelos</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html">Services</a>
@@ -57,10 +66,10 @@
       Página web ficticia de un concesionario Tesla en Canarias.
     </p>
   </div>
-<br/><br/><br/><br/>
+  <br /><br /><br /><br />
   <div class="container">
     <h2>Principales modelos</h2>
-    <p>Tabla informativa básica sobre los principales modelos Tesla</p>            
+    <p>Tabla informativa básica sobre los principales modelos Tesla</p>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -89,10 +98,10 @@
     </table>
   </div>
 
-<br/><br/><br/>
+  <br /><br /><br />
 
   <div class="container">
-    <h2>Tabla de precios</h2>           
+    <h2>Tabla de precios</h2>
     <table class="table table-dark">
       <thead>
         <tr>
