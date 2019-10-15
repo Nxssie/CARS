@@ -11,6 +11,14 @@
 .carousel-inner img { 
   max-width:100%;
   max-height:100%;
-  width: 850px; 
-  height: 480px; 
+}
+.cartitle {
+  text-align: center;
+}
+.cartext {
+  text-align: center;
+}
+.cardesc {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
