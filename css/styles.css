@@ -23,3 +23,9 @@
 .cardesc {
   padding-bottom: 50px;
 }
+#carousel2 {
+  z-index: -1000;
+}
+.car_indicators{
+  z-index: -999;
+}
