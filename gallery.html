@@ -3,7 +3,7 @@
 
 <head>
     <!--title-->
-    <title>Sobre nosotros</title>
+    <title>Galería</title>
     <link rel="icon" href="img/tesla_icon.png" />
 
     <!-- Required meta tags -->
@@ -22,7 +22,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img class="img-fluid" id="logo" src="img/tesla_logo.svg" alt="" />
@@ -37,7 +37,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <!-- Dropdown -->
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             About
                         </a>
@@ -46,8 +46,8 @@
                             <a class="dropdown-item" href="models.html">Nuestros modelos</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="gallery.html">Galería</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -59,7 +59,52 @@
 
     <!-- Page Content -->
     <div class="container">
-        <p>hello,world</p>
+        <h2>Responsive Image Gallery</h2>
+        <h4>Resize the browser window to see the effect.</h4>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="img_5terre.jpg">
+              <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+          </div>
+        </div>
+        
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="img_forest.jpg">
+              <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+          </div>
+        </div>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="img_lights.jpg">
+              <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+          </div>
+        </div>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="img_mountains.jpg">
+              <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+          </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <div style="padding:6px;">
+          <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+          <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+        </div>
     </div>
          
     <!-- /.container -->
