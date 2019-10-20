@@ -7,6 +7,7 @@
 #navbar2{
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 .carousel-inner img { 
   max-width:100%;
@@ -23,15 +24,15 @@
 .cardesc {
   padding-bottom: 50px;
 }
-#carousel2 {
+/* #carousel2 {
   z-index: -1000;
-}
-#carousel3 {
+} */
+/* #carousel3 {
   z-index: -1000;
-}
-.car_indicators{
+} */
+/* .car_indicators{
   z-index: -999;
-}
-.carousel-indicators{
+} */
+/* .carousel-indicators{
   z-index: -998;
-}
+} */
