@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!--Own CSS-->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -61,69 +61,83 @@
 
   <!-- Page Content -->
   <div class="container">
-    <h1 class="mt-4">Tesla Canarias</h1>
-    <p id="intro">
-      Página web ficticia de un concesionario Tesla en Canarias. Aquí podrás encontrar la información más básica, si quieres obtener más información, bien puedes acceder a nuestro <a href="models.html">catálogo</a> o hacernos cualquier <a href="contact.html">consulta</a>
-    </p>
-  </div>
-  <br /><br /><br /><br />
-  <div class="container">
-    <h2>Principales modelos</h2>
-    <p>Tabla informativa básica sobre los principales modelos Tesla</p>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Modelo</th>
-          <th>Autonomía</th>
-          <th>Velocidad máxima</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Model S P100D</td>
-          <td>507 km</td>
-          <td>250 km/h</td>
-        </tr>
-        <tr>
-          <td>Model X P90D</td>
-          <td>402 km</td>
-          <td>250 km/h</td>
-        </tr>
-        <tr>
-          <td>Model 3 Performance</td>
-          <td>530</td>
-          <td>260 km/h</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <br /><br /><br />
-
-  <div class="container">
-    <h2>Tabla de precios</h2>
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th>Modelo</th>
-          <th>Precio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Model S P100D</td>
-          <td>105.680 €</td>
-        </tr>
-        <tr>
-          <td>Model X P90D</td>
-          <td>116.780 €</td>
-        </tr>
-        <tr>
-          <td>Model 3 Performance</td>
-          <td>65.270 €</td>
-        </tr>
-      </tbody>
-    </table>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true">Home</a>
+        <a class="nav-item nav-link" id="nav-table1-tab" data-toggle="tab" href="#nav-table1" role="tab"
+          aria-controls="nav-table1" aria-selected="false">Tabla 1</a>
+        <a class="nav-item nav-link" id="nav-table2-tab" data-toggle="tab" href="#nav-table2" role="tab"
+          aria-controls="nav-table2" aria-selected="false">Tabla 2</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <h3 class="mt-4">Tesla Canarias</h3>
+        <p id="intro">
+          Página web ficticia de un concesionario Tesla en Canarias. Aquí
+          podrás encontrar la información más básica, si quieres obtener más
+          información, bien puedes acceder a nuestro
+          <a href="models.html">catálogo</a> o hacernos cualquier
+          <a href="contact.html">consulta</a>
+        </p>
+      </div>
+      <div class="tab-pane fade" id="nav-table1" role="tabpanel" aria-labelledby="nav-table1">
+        <h2>Principales modelos</h2>
+        <p>Tabla informativa básica sobre los principales modelos Tesla</p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Autonomía</th>
+              <th>Velocidad máxima</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Model S P100D</td>
+              <td>507 km</td>
+              <td>250 km/h</td>
+            </tr>
+            <tr>
+              <td>Model X P90D</td>
+              <td>402 km</td>
+              <td>250 km/h</td>
+            </tr>
+            <tr>
+              <td>Model 3 Performance</td>
+              <td>530</td>
+              <td>260 km/h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-table2" role="tabpanel" aria-labelledby="nav-table2">
+          <h2>Tabla de precios</h2>
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model S P100D</td>
+                <td>105.680 €</td>
+              </tr>
+              <tr>
+                <td>Model X P90D</td>
+                <td>116.780 €</td>
+              </tr>
+              <tr>
+                <td>Model 3 Performance</td>
+                <td>65.270 €</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
   </div>
   <!-- /.container -->
 
