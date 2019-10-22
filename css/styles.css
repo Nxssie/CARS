@@ -9,6 +9,9 @@
   top: 0;
   z-index: 1;
 }
+#about{
+  padding-bottom: 20px;
+}
 .carousel-inner img { 
   max-width:100%;
   max-height:100%;
