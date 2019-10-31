@@ -30,7 +30,7 @@ for (image of images) {
             class="modal-dialog modal-lg modal-dialog-centered"
             role="document"
           >
-            <img class="img-fluid rounded" src="img/gallery/1.jpg" alt="" />
+            <img class="img-fluid rounded" src="img/gallery/${image}.jpg" alt="" />
           </div>
         </div>
             `;
