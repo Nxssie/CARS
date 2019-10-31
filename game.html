@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
-    <!--title-->
-    <title>Sobre nosotros</title>
-    <link rel="icon" href="img/tesla_icon.png" />
-
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -19,23 +19,16 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-      crossorigin="anonymous"
-    />
 
-    <!--Own CSS-->
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Own JS -->
+    <script src="js/snake.js"></script>
   </head>
-
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img class="img-fluid" id="logo" src="img/tesla_logo.svg" alt="" />
+      <div class="container" id="navbar3">
+        <a class="navbar-brand" id="logo" href="index.html">
+          <img class="img-fluid" src="img/tesla_logo.svg" alt="" />
         </a>
         <button
           class="navbar-toggler"
@@ -54,7 +47,7 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <!-- Dropdown -->
-            <li class="nav-item dropdown class">
+            <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -74,7 +67,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contacto</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="game.html">Minijuego</a>
             </li>
           </ul>
@@ -82,27 +75,9 @@
       </div>
     </nav>
 
-    <!-- Page Content -->
-    <div class="container" id="about">
-      <h1 class="mt-4">Sobre nosotros</h1>
-      <p>
-        Estás viendo la página web del concesionario Tesla en Canarias,<br />
-        donde podrás obtener información sobre nosotros.
-      </p>
-    </div>
-
     <div class="container">
-      <h3>¿Donde nos encontramos?</h3>
-      <br />
-      <div class="resp-container">
-        <iframe
-          class="resp-iframe"
-          src="https://www.google.com/maps/d/embed?mid=119HU-9qK5S7OpwbDuCmtNvdMGhiAnYlR&hl=es"
-        ></iframe>
-      </div>
+      <canvas id="canvas" width="200" height="200"></canvas>
     </div>
-    <!-- /.container -->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
