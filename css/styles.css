@@ -61,3 +61,12 @@
 .navbar:hover{
   color: red;
 }
+#canvas {
+  background-color: red;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.canvas-container {
+  text-align: center;
+}
