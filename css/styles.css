@@ -2,6 +2,9 @@
   width: 75px;
   position: sticky;
 }
+#title{
+  text-align: center;
+}
 #intro{
   margin-right: 400px;
 }
@@ -65,8 +68,8 @@
   background-color: red;
   width: 50%;
   border: 1px solid black;
+  display: inline-flex;
 }
-
 .canvas-container {
   text-align: center;
 }
