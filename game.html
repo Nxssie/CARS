@@ -13,6 +13,9 @@
     <!-- Own CSS -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- Own JS -->
+    <script src="js/snake.js"></script>
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -20,9 +23,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
-    <!-- Own JS -->
-    <script src="js/snake.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -76,8 +76,15 @@
       </div>
     </nav>
 
-    <div class="canvas-container">
-      <canvas id="canvas" width="200" height="200"></canvas>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <div class="container" id="loose">
+      <h3>Has perdido</h3>
+      <input
+        id="reload-button"
+        type="button"
+        value="Empezar de nuevo"
+        onclick="location.reload()"
+      />
     </div>
 
     <!-- Optional JavaScript -->

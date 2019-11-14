@@ -11,7 +11,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <!-- Own JS -->
+    <script src="js/form.js"></script>
     <!--Own CSS-->
     <link rel="stylesheet" href="css/styles.css" />
 
@@ -83,6 +84,7 @@
     </nav>
 
     <!-- Page Content -->
+    <!--Just a jumbotron-->
     <div class="container">
       <div class="jumbotron">
         <h1>Formulario de contacto</h1>
@@ -92,44 +94,46 @@
       </div>
     </div>
 
+    <!--Contact Form-->
     <div class="container">
-      <form action="approve.html">
+      <form id="contact-form">
+        <!--Name-->
         <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" />
+          <label for="name">Nombre:</label>
+          <input class="form-control" type="text" id="name" name="name">
+          <span id="name-error">* Nombre requerido.</span>
+        
+          <!--Surname-->
+          <label for="surname">Apellidos:</label>
+          <input type="text" class="form-control" id="surname" name="surname" />
+          <span id="surname-error">* 1 Apellido como mínimo.</span>
         </div>
+
+        <!--Gender Selection-->
         <div class="form-group">
-          <label for="apellidos">Apellidos:</label>
-          <input type="text" class="form-control" id="apellidos" />
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                type="radio"
+                class="form-check-input"
+                value="female"
+                name="gender"
+              />Femenino
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                type="radio"
+                class="form-check-input"
+                value="male"
+                name="gender"
+              />Masculino
+            </label>
+          </div>
+          <span id="gender-error">Seleccione una opción.</span>
         </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input
-              type="radio"
-              class="form-check-input"
-              name="optradio"
-            />Femenino
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input
-              type="radio"
-              class="form-check-input"
-              name="optradio"
-            />Masculino
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input
-              type="radio"
-              class="form-check-input"
-              name="optradio"
-            />Otros
-          </label>
-        </div>
-        <br />
+        <!--Username selection-->
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">@</span>
@@ -140,7 +144,7 @@
             placeholder="Nombre de usuario"
           />
         </div>
-
+        <!--Client mail-->
         <div class="input-group mb-3">
           <input
             type="text"
@@ -151,11 +155,13 @@
             <span class="input-group-text">@tesla.com</span>
           </div>
         </div>
+        <!--Remember?-->
         <div class="form-group form-check">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" /> Recuérdame
           </label>
         </div>
+        <!--Choose a car model to ask about it-->
         <div class="form-group">
           <label for="sel1">Seleccione modelo para consulta:</label>
           <select class="form-control" id="sel1">
@@ -164,27 +170,36 @@
             <option>Model X</option>
           </select>
         </div>
+        <!--User message input-->
         <div class="form-group">
           <label for="comment">Mensaje:</label>
           <textarea class="form-control" rows="5" id="comment"></textarea>
         </div>
+        <!--File attached-->
         <div class="form-group">
           <label>Archivo adjunto:</label>
           <input type="file" class="form-control-file border" />
         </div>
+        <!--Search?-->
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Búsqueda" />
           <div class="input-group-append">
             <button class="btn btn-success" type="submit">Buscar</button>
           </div>
         </div>
+        <!--Notify an answer?-->
         <div class="form-group custom-control custom-switch">
           <input type="checkbox" class="custom-control-input" id="switch1" />
-          <label class="custom-control-label" for="switch1">Notificar respuesta</label>
+          <label class="custom-control-label" for="switch1"
+            >Notificar respuesta</label
+          >
         </div>
-        <br/>
+        <br />
+        <!--Submit & reset buttons-->
         <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="reset" value="Reset" class="btn btn-primary">Reset</button>
+        <button type="reset" value="Reset" class="btn btn-primary">
+          Reset
+        </button>
       </form>
     </div>
     <!-- /.container -->

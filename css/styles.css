@@ -1,3 +1,4 @@
+/* Main Styles */
 #logo{
   width: 75px;
   position: sticky;
@@ -42,9 +43,7 @@
   padding-bottom: 15px;
   text-align: center;
 }
-.form-check{
-  padding-top: -5px;
-}
+
 .resp-container {
   position: relative;
   overflow: hidden;
@@ -64,12 +63,34 @@
 .navbar:hover{
   color: red;
 }
-#canvas {
-  background-color: red;
-  width: 50%;
-  border: 1px solid black;
-  display: inline-flex;
+
+/* Minigame */
+canvas { background: #eee; display: block; margin: 0 auto; }
+
+#loose{
+  position: relative;
+  opacity: 0;
 }
-.canvas-container {
-  text-align: center;
+
+/* Contact form */
+.form-check{
+  padding-top: -5px;
+}
+#name-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 9px;
+}
+#surname-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 9px;
+}
+#gender-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 9px;
 }
