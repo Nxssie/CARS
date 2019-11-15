@@ -86,7 +86,7 @@ canvas { background: #eee; display: block; margin: 0 auto; }
   display: none;
   color: red;
   font-style: oblique;
-  font-size: 9px;
+  font-size: 11px;
 }
 #gender-error{
   display: none;
