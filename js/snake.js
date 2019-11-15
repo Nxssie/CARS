@@ -1,6 +1,23 @@
 window.onload = initialize();
 
 function initialize() {
+  var difficultyEasy = document.getElementById("easy-button");
+  var difficultyMed = document.getElementById("med-button");
+  var difficultyHard = document.getElementById("hard-button");
+
+  difficultyEasy.addEventListener("click", easy())
+  console.log("medium");  
+  console.log("hard");    
+}
+function easy(){
+  console.log("easy");
+}
+
+function clearButtons(){
+  document.getElementById("difficulty").style.display = none;
+}
+
+function startGame() {
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
   var ballRadius = 10;

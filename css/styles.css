@@ -73,6 +73,10 @@ canvas { background: #eee; display: block; margin: 0 auto; }
   margin-top: -100;
 }
 
+#difficulty{
+  display: block;
+}
+
 /* Contact form */
 .form-check{
   padding-top: -5px;
