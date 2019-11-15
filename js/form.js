@@ -5,24 +5,42 @@ function initialize() {
   formTest.addEventListener("submit", validateAndSend);
 }
 function validateAndSend(event) {
-  console.log("hola");
   var formTest = event.target;
   var formName = formTest["name"].value;
-  //var formSurname = formTest["surname"].value;
-  //var formAge = formTest["age"].value;
-  //var formGender = formTest["gender"].value;
+  var formSurname = formTest["surname"].value;
+  var formGender = formTest["gender"].value;
+  var formUser = formTest["user"].value;
+  var formMail = formTest["mail"].value;
+  var formComment = formTest["comment"].value;
 
   if (!formName) {
     console.log("Nombre requerido.");
     document.getElementById("name-error").style.display = "block";
     event.preventDefault();
-    return;
   }
   if (!formSurname) {
-    console.log("1 Apellido como mínimo.");
+    console.log("No se ha introducido ningún apellido");
     document.getElementById("surname-error").style.display = "block";
     event.preventDefault();
-    return;
   }
-
+  if (!formGender) {
+    console.log("No se ha seleccionado género.");
+    document.getElementById("gender-error").style.display = "block";
+    event.preventDefault();
+  }
+  if (!formUser) {
+    console.log("No se ha introducido un usuario");
+    document.getElementById("user-error").style.display = "block";
+    event.preventDefault();
+  }
+  if(!formMail){
+    console.log("No se ha introducido un mail");
+    document.getElementById("mail-error").style.display = "block";
+    event.preventDefault();
+  }
+  if(!formComment){
+    console.log("Campo mensaje vacío.");
+    document.getElementById("comment-error").style.display = "block";
+    event.preventDefault();
+  }
 }

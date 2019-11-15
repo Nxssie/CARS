@@ -96,7 +96,7 @@
 
     <!--Contact Form-->
     <div class="container">
-      <form id="contact-form">
+      <form action="approve.html" id="contact-form">
         <!--Name-->
         <div class="form-group">
           <label for="name">Nombre:</label>
@@ -104,7 +104,7 @@
           <span id="name-error">* Nombre requerido.</span>
         
           <!--Surname-->
-          <label for="surname">Apellidos:</label>
+          <label class="mt-3" for="surname">Apellidos:</label>
           <input type="text" class="form-control" id="surname" name="surname" />
           <span id="surname-error">* 1 Apellido como mínimo.</span>
         </div>
@@ -134,7 +134,7 @@
           <span id="gender-error">Seleccione una opción.</span>
         </div>
         <!--Username selection-->
-        <div class="input-group mb-3">
+        <div class="input-group mt-3">
           <div class="input-group-prepend">
             <span class="input-group-text">@</span>
           </div>
@@ -142,21 +142,28 @@
             type="text"
             class="form-control"
             placeholder="Nombre de usuario"
+            id="user"
+            name="user"
           />
+          
         </div>
+        <span id="user-error">* Debe elegir un usuario</span>
         <!--Client mail-->
-        <div class="input-group mb-3">
+        <div class="input-group mt-3">
           <input
             type="text"
             class="form-control"
             placeholder="Email de cliente"
+            id="mail"
+            name="mail"
           />
           <div class="input-group-append">
             <span class="input-group-text">@tesla.com</span>
           </div>
         </div>
+        <span id="mail-error">* Debe introducir un email de cliente.</span>
         <!--Remember?-->
-        <div class="form-group form-check">
+        <div class="form-group form-check mt-3">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" /> Recuérdame
           </label>
@@ -173,16 +180,18 @@
         <!--User message input-->
         <div class="form-group">
           <label for="comment">Mensaje:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
+          <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+          <span id="comment-error">No puede dejar este campo vacío.</span>
         </div>
+        
         <!--File attached-->
         <div class="form-group">
           <label>Archivo adjunto:</label>
           <input type="file" class="form-control-file border" />
         </div>
         <!--Search?-->
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Búsqueda" />
+        <div class="input-group mt-3">
+          <input type="text" class="form-control" placeholder="Búsqueda" id="search" name="search"/>
           <div class="input-group-append">
             <button class="btn btn-success" type="submit">Buscar</button>
           </div>

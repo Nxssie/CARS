@@ -70,6 +70,7 @@ canvas { background: #eee; display: block; margin: 0 auto; }
 #loose{
   position: relative;
   opacity: 0;
+  margin-top: -100;
 }
 
 /* Contact form */
@@ -80,7 +81,10 @@ canvas { background: #eee; display: block; margin: 0 auto; }
   display: none;
   color: red;
   font-style: oblique;
-  font-size: 9px;
+  font-size: 11px;
+}
+#surname{
+  padding-top: 10px;
 }
 #surname-error{
   display: none;
@@ -92,5 +96,26 @@ canvas { background: #eee; display: block; margin: 0 auto; }
   display: none;
   color: red;
   font-style: oblique;
-  font-size: 9px;
+  font-size: 11px;
+}
+#user-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#mail-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+}
+#comment-error{
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
 }
