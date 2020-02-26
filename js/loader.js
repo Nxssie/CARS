@@ -1,9 +1,47 @@
+import { loadNavbar } from './navbar.js';
+import { loadFooter } from './footer.js';
+import { findTreasure } from './game.js';
+import { officeList } from './office.js';
+import { loadModal } from './officeModal.js';
+//import { insertScripts } from "./insertFirebase.js";
+import { loadFirebase } from "./firebase.js";
+
 window.onload = initialize;
 
 function initialize() {
-  var formTest = document.getElementById("contact-form");
-  formTest.addEventListener("submit", validateAndSend);
+  document.getElementById("navbar-top").innerHTML = loadNavbar();
+  document.getElementById("page-footer").innerHTML = loadFooter();
+
+  const emailSub = document.getElementById("emailSub");
+  emailSub.addEventListener("submit", validateAndSendEmail);
+
+  if (document.getElementById("contact-form")){
+    const formTest = document.getElementById("contact-form");
+    formTest.addEventListener("submit", validateAndSend);
+  }
+
+  if (document.getElementById("map")) {
+    findTreasure();
+  }
+
+  if (document.getElementById("offices-table")) {
+    loadFirebase();
+    officeList();
+    loadModal();
+  }
 }
+
+function validateAndSendEmail(event) {
+  const emailSub = event.target;
+  const email = emailSub["email"].value;
+
+  if (!email) {
+    console.log("email requerido");
+    document.getElementById("email-error").style.display = "block";
+    event.preventDefault();
+  }
+}
+
 function validateAndSend(event) {
   const formTest = event.target;
   const formName = formTest["name"].value;
@@ -44,3 +82,11 @@ function validateAndSend(event) {
     event.preventDefault();
   }
 }
+/*
+let getBack = document.getElementById("get-back");
+getBack.addEventListener("click", getBackFunction);
+
+let getBackFunction = () => {
+  window.history.back();
+};
+*/

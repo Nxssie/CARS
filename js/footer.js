@@ -1,10 +1,9 @@
-window.onload = loadFooter;
+export function loadFooter() {
+  console.log("Footer.");
+  //var footer = document.getElementById("page-footer");
 
-function loadFooter() {
-  var footer = document.getElementById("page-footer");
-
-  footer.innerHTML = 
-  `
+  //footer.innerHTML =
+  return `
   <div class="footer-top">
         <div class="container">
           <div class="row">
@@ -23,6 +22,7 @@ function loadFooter() {
                 <li><a href="gallery.html">Galería</a></li>
                 <li><a href="contact.html">Contacto</a></li>
                 <li><a href="game.html">Minijuego</a></li>
+                <li><a href="office.html">Oficinas</a></li>
               </ul>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
@@ -36,21 +36,19 @@ function loadFooter() {
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 segment-four sm-mb-30">
               <h2 class="footer-h f-h2">Novedades</h2>
-              <p class="footer-p">
+              <div class="footer-p">
                 Suscríbete a nuestras novedades semanales.
-              </p>
-              <form action="approve-mail.html">
-                <input type="email">
-                <input type="submit" value="Suscribirme">
+              </div>
+              <form action="approve-mail.html" id="emailSub">
+                  <input type="email" name="email">
+                  <input type="submit" value="Suscribirme">
+                  <span id="emailError">* Email no válido.</span>
               </form>
+              
             </div>
           </div>
         </div>
+        <p class="footer-bottom-text">All right reserved by &copy;Carlos Sánchez</p>
       </div>
-      <p class="footer-bottom-text">All right reserved by &copy;Carlos Sánchez</p>
   `;
-}
-
-function goBack(){
-  window.history.back();
 }

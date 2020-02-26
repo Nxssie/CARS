@@ -1,0 +1,53 @@
+#page {
+    position: center;
+    height: 100%;
+    width: 100%;
+    background: #34495e;
+    color: #fff;
+    padding: 0;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#page h2 {
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+ #distance {
+     font-size: 16px;
+     color: black;
+ }
+#map {
+    max-width: 400px;
+    max-height: 400px;
+    height: 100%;
+    width: 100%;
+}
+
+#winContainer {
+    position: absolute;
+    background: #34495e;
+    display: none;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: 100px;
+    max-width: 300px;
+    justify-content: center;
+}
+
+#imgWin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
+body {
+    background: #34495e;
+}

@@ -1,9 +1,9 @@
 var images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 var gallery = document.getElementById("gallery");
-
 for (image of images) {
   gallery.innerHTML += `
-            <div class="card">
+            <div class="card BnW">
+            <!-- hola -->
           <a data-toggle="modal" data-target="#id${image}">
             <img class="card-img-top" src="img/gallery/${image}.jpg" alt="Tesla" />
           </a>

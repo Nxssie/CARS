@@ -1,28 +1,28 @@
 /* Main Styles */
-#logo{
+#logo {
   width: 75px;
   position: sticky;
 }
-#title{
+#title {
   text-align: center;
 }
-#intro{
+#intro {
   margin-right: 400px;
 }
-#navbar2{
+#navbar2 {
   position: sticky;
   top: 0;
   z-index: 1;
 }
-#about{
+#about {
   padding-bottom: 20px;
 }
-.navbar-expand-lg{
+.navbar-expand-lg {
   background-color: #c2c2c2;
 }
-.carousel-inner img { 
-  max-width:100%;
-  max-height:100%;
+.carousel-inner img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .cartitle {
   text-align: center;
@@ -35,13 +35,42 @@
 .cardesc {
   padding-bottom: 30px;
 }
-.carousel{
+.carousel {
   padding-bottom: 20px;
 }
-#gallerytitle{
+#gallerytitle {
   padding-top: 5px;
   padding-bottom: 15px;
   text-align: center;
+}
+.BnW {
+  filter: grayscale(1);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.BnW:hover {
+  filter: grayscale(0);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(1.25);
+  z-index: 100;
+}
+
+#emailSub {
+  display: inline-flex;
+  padding: 5px;
+}
+
+#emailError {
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
 }
 
 .resp-container {
@@ -57,97 +86,101 @@
   height: 100%;
   border: 0;
 }
-.nav-item{
+.nav-item {
   color: red;
 }
-.navbar:hover{
-  color: red;
+
+#logo:hover {
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(0.75);
 }
-#get-back{
+
+#get-back {
   position: absolute;
   left: 50%;
 }
 
-/* Minigame */
-canvas { background: #eee; display: block; margin: 0 auto; }
-
 /* Footer */
-.footer-p{
+.footer-p {
   color: #999;
   line-height: 25px;
 }
-.footer-h{
-  color:#fff;
+.footer-h {
+  color: #fff;
 }
-.f-h2{
+.f-h2 {
   font-size: 18px;
 }
-.footer-top{
+.footer-top {
   background: #111;
   padding: 80px 0;
+  margin-top: 10em;
 }
-.segment-one h3{
+.segment-one h3 {
   font-family: Courgette;
   color: #fff;
   letter-spacing: 3px;
   margin: 10px 0;
 }
-.segment-two h2{
+.segment-two h2 {
   color: #fff;
   font-family: Poppins;
   text-transform: uppercase;
 }
-.segment-two h2:before{
-  content: '|';
-  color: #C65039;
+.segment-two h2:before {
+  content: "|";
+  color: #c65039;
   padding-right: 10px;
 }
-.segment-two ul{
+.segment-two ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.segment-two ul li{
+.segment-two ul li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   line-height: 40px;
 }
-.segment-two ul li a{
+.segment-two ul li a {
   color: #999;
   text-decoration: none;
 }
-.segment-three h2{
+.segment-three h2 {
   color: #fff;
   font-family: Poppins;
   text-transform: uppercase;
 }
-.segment-three h2:before{
-  content: '|';
-  color: #C65039;
+.segment-three h2:before {
+  content: "|";
+  color: #c65039;
   padding-right: 10px;
 }
-.segment-three a{
+.segment-three a {
   background: #494848;
   width: 40px;
   height: 40px;
   display: inline-block;
   border-radius: 50%;
 }
-.segment-three a i{
+.segment-three a i {
   font-size: 20px;
   color: #fff;
   padding: 10px 11px;
 }
-.segment-four h2{
+.segment-four h2 {
   color: #fff;
   font-family: Poppins;
   text-transform: uppercase;
 }
-.segment-four h2:before{
-  content: '|';
-  color: #C65039;
+.segment-four h2:before {
+  content: "|";
+  color: #c65039;
   padding-right: 10px;
 }
-.segment-four form input[type=submit]{
+.segment-four form input[type="submit"] {
   background: #c65039;
   border: none;
   padding: 3px 15px;
@@ -155,23 +188,25 @@ canvas { background: #eee; display: block; margin: 0 auto; }
   color: #fff;
   text-transform: uppercase;
 }
-.footer-bottom-text{
+.footer-bottom-text {
   text-align: center;
   background: #000;
   line-height: 75px;
+  color: #fff;
+  
 }
 
 /* Responsive CSS */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .md-mb-30{
+  .md-mb-30 {
     margin-bottom: 30px;
   }
 }
-@media only screen and (max-width: 767px){
-  .sm-mb-30{
+@media only screen and (max-width: 767px) {
+  .sm-mb-30 {
     margin-bottom: 30px;
   }
-  .footer-top{
+  .footer-top {
     padding: 50px 0;
   }
 }

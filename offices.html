@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+
+    <!--Own CSS-->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/offices.css" />
+    <link rel="stylesheet" href="css/modalWindow.css" />
+
+    <!--Own JS-->
+    <script type="module" src="js/loader.js"></script>
+  </head>
+  <body>
+    <!-- Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar-top"></nav>
+
+    <!-- Content -->
+    <div class="container">
+      <table class="table table-striped" id="offices-table">
+        <thead>
+          <tr>
+            <th>Nº Oficina</th>
+            <th>Localizacion</th>
+            <th>Encargado</th>
+            <th>Logo sede</th>
+            <th>User actions</th>
+          </tr>
+        </thead>
+        <tbody id="my-offices-list">
+          <!-- here goes the database content -->
+        </tbody>
+      </table>
+
+      <form id="form-offices">
+        <div class="form-group">
+          <label for="type">Nº Oficina</label>
+          <input type="text" class="form-control" id="type" name="type" />
+          <span id="type-error">* Tipo de producto no válido.</span>
+        </div>
+        <div class="form-group">
+          <label for="stock">Localizacion</label>
+          <input type="number" class="form-control" id="stock" name="stock" />
+          <span id="stock-error">* Stock de producto no válido.</span>
+        </div>
+        <div class="form-group">
+          <label for="price">Encargado</label>
+          <input type="number" class="form-control" id="price" name="price" />
+          <span id="price-error">* Precio de producto no válido.</span>
+        </div>
+        <button id="create-element" type="submit" class="btn btn-primary">Create an Item</button>
+        <button id="edit-element" type="submit" class="btn btn-primary">Update an Item</button>
+        <button id="cancel-button" type="reset" class="btn btn-secondary">Cancel</button>
+      </form>
+    </div>
+
+    <div class="container">
+      <button class="btn btn-danger" id="myBtn">Añadir oficina</button>
+    </div>
+
+    <!-- .Content -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div>
+          <i class="fas fa-times close"></i>
+          <h2 id="modal-header">Añadir oficina</h2>
+        </div>
+
+        <!-- Form to add an office -->
+        <form action="">
+          <div class="form-group">
+            <label for="place">Localización: </label>
+            <input type="text" class="form-control" name="form-place" id="form-place" placeholder="Localización de la oficina"/>
+          </div>
+          <div class="form-group">
+            <label for="admin">Encargado: </label>
+            <input type="text" class="form-control" name="form-admin" id="form-admin" placeholder="Encargado de la oficina">
+          </div>
+          <div class="form-group">
+            <label for="image">Logo sede: </label> <br/>
+            <input type="file" name="form-image" id="form-image">
+          </div>
+
+          <button type="submit" class="btn btn-success" id="add-button">Añadir</button>
+          <button type="reset" class="btn btn-danger" id="reset-button">Cancelar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="mt-5" id="page-footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
