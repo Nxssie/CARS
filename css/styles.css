@@ -1,4 +1,9 @@
 /* Main Styles */
+body {
+  margin: auto;
+  height: auto;
+}
+
 #logo {
   width: 75px;
   position: sticky;
@@ -12,7 +17,7 @@
 #navbar2 {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 #about {
   padding-bottom: 20px;
@@ -26,6 +31,8 @@
 }
 .cartitle {
   text-align: center;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 .cartext {
   text-align: center;
@@ -33,11 +40,27 @@
   padding-left: 50px;
 }
 .cardesc {
-  padding-bottom: 30px;
+  text-align: center;
 }
+
+#modelx {
+  padding-top: 10em;
+  padding-bottom: 30em;
+}
+
+#models {
+  padding-top: 5em;
+}
+
 .carousel {
   padding-bottom: 20px;
+  margin: auto;
+  text-align: center;
 }
+.carousel-indicators {
+  z-index: 5;
+}
+
 #gallerytitle {
   padding-top: 5px;
   padding-bottom: 15px;
@@ -116,9 +139,11 @@
 }
 .footer-top {
   background: #111;
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 5em;
   margin-top: 10em;
 }
+
 .segment-one h3 {
   font-family: Courgette;
   color: #fff;

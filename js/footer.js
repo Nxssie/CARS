@@ -48,7 +48,6 @@ export function loadFooter() {
             </div>
           </div>
         </div>
-        <p class="footer-bottom-text">All right reserved by &copy;Carlos Sánchez</p>
       </div>
   `;
 }

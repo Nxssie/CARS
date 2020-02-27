@@ -8,6 +8,9 @@ export let loadModal = () => {
   // Get the element that closes the modal
   var closeBtn = document.getElementsByClassName("close")[0];
 
+  // Get the cancel button
+  var resetBtn = document.getElementById("reset-btn");
+
   // When the user clicks on the button, open the modal
   btn.onclick = function() {
     modal.style.display = "block";
@@ -23,5 +26,10 @@ export let loadModal = () => {
     if (event.target == modal) {
       modal.style.display = "none";
     }
+  };
+
+  // When the user resets the form also closes the modal
+  resetBtn.onclick = function() {
+    modal.style.display = "none";
   };
 };
