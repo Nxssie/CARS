@@ -1,8 +1,10 @@
 //Main const
 let ADD = "add";
 let UPDATE = "update";
-let action = UPDATE;
+let action = ADD;
 let keyOffice;
+let validated = 1;
+const formOffice = document.getElementById("form-office");
 
 
 // Exported function to load it from loader.js
@@ -25,44 +27,58 @@ let addOrUpdateOffice = (event) => {
   event.preventDefault();
   var formOffice = event.target;
   console.log(formOffice);
-  let id = formOffice["office-id"].value;
+  let id = formOffice.officeId.value;
   let place = formOffice.place.value;
   let admin = formOffice.admin.value;
   let defaultLogo = "img/tesla_icon.png"
 
-  if (action == ADD) {
-    //adding part
-    if (formOffice.nologo.checked) {
-      var refOffice = firebase.database().ref().child("offices");
-      refOffice.push({
-        id: id,
-        place: place,
-        admin: admin,
-        img: defaultLogo
-      });
+  if (validated == 1) {
+    if (action == ADD) {
+      //adding part
+      if (formOffice.nologo.checked) {
+        var refOffice = firebase.database().ref().child("offices");
+        refOffice.push({
+          id: id,
+          place: place,
+          admin: admin,
+          img: defaultLogo
+        });
+
+        formOffice.reset();
+      } else {
+        var file = formOffice.img.files[0];
+        var fileName = file.name;
+        let ref = firebase.storage().ref().child(fileName);
+        ref.put(file).then(function (snapshot) {
+          console.log('Uploaded file!');
+          ref.getDownloadURL().then(function (url) {
+            var refOffice = firebase.database().ref().child("offices");
+            refOffice.push({
+              id: id,
+              place: place,
+              admin: admin,
+              img: url
+            });
+          }).catch(function (error) {
+            console.log(error);
+          });
+        });
+        formOffice.reset();
+      }
     } else {
+
+      if (formOffice.nologo.checked) {
+        let refOfficeToEdit = firebase.database().ref("offices/" + keyOffice);
+        refOfficeToEdit.update({
+          id: id,
+          place: place,
+          admin: admin,
+          img: defaultLogo
+        });
+      } else {
+      let refOfficeToEdit = firebase.database().ref("offices/" + keyOffice);
       var file = formOffice.img.files[0];
       var fileName = file.name;
-      let ref = firebase.storage().ref().child(fileName);
-      ref.put(file).then(function (snapshot) {
-        console.log('Uploaded file!');
-        ref.getDownloadURL().then(function (url) {
-          var refOffice = firebase.database().ref().child("offices");
-          refOffice.push({
-            id: id,
-            place: place,
-            admin: admin,
-            img: url
-          });
-        }).catch(function (error) {
-          console.log(error);
-        });
-      });
-      formOffice.reset();
-    }
-  } else {
-    let refOfficeToEdit = firebase.database().ref("offices" + keyItem);
-      
       let ref = firebase.storage().ref().child(fileName);
       ref.put(file).then(function (snapshot) {
         console.log('Uploaded a blob or file!');
@@ -70,26 +86,21 @@ let addOrUpdateOffice = (event) => {
         ref.getDownloadURL().then(function (url) {
 
           refOfficeToEdit.update({
-            type: formItem.type.value,
-            stock: formItem.stock.value,
-            price: formItem.price.value,
-            image_url: url
+            id: id,
+            place: place,
+            admin: admin,
+            img: url
           });
         }).catch(function (error) {
           // Handle any errors
         });
       });
 
-      editButton.style.display = "none";
-      cancelButton.style.display = "none";
-      createButton.style.display = "inline-block";
+      formOffice.reset();
+      } 
+    }
+  }
 
-      formItem.reset();
-  }  
-
-
-
-  //updating part
 
 
 }
@@ -144,7 +155,7 @@ let showOffices = (snap) => {
   var editors = document.getElementsByClassName("editor");
   for (var i = 0; i < removers.length; i++) {
     removers[i].addEventListener("click", deleteOffice);
-    //editors[i].addEventListener("click", editItem);
+    editors[i].addEventListener("click", editOffice);
   }
 }
 
@@ -152,22 +163,28 @@ let showOffices = (snap) => {
 let deleteOffice = (event) => {
   let buttonclicked = event.target;
 
-  let keyItemToDelete = buttonclicked.getAttribute("data-office");
-  let refItemToDelete = firebase.database().ref("offices/" + keyItemToDelete);
-  refItemToDelete.remove();
+  let keyOfficeToDelete = buttonclicked.getAttribute("data-office");
+  let refOfficeToDelete = firebase.database().ref("offices/" + keyOfficeToDelete);
+  refOfficeToDelete.remove();
 }
+
 
 /* Doing the same as above but instead of removing, just editing taking the info from the modal*/
 let editOffice = (event) => {
-  let buttonclicked = even.target;
+  let buttonclicked = event.target;
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
 
-  let keyItemToEdit = buttonclicked.getAttribute("data-office");
-  let refItemToEdit = firebase.database().ref("offices/" + keyItemToEdit);
+  let keyOfficeToEdit = buttonclicked.getAttribute("data-office");
+  let refOfficeToEdit = firebase.database().ref("offices/" + keyOfficeToEdit);
 
-  refItemToEdit.once("value", function (snap) {
-    let data = snap.val;
+  refOfficeToEdit.once("value", function (snap) {
+    let data = snap.val();
 
+    formOffice.officeId.value = data.officeId;
     formOffice.place.value = data.place;
     formOffice.admin.value = data.admin;
   });
+
+  action = UPDATE;
 }

@@ -40,6 +40,11 @@ return `
               <a class="nav-link" href="gallery.html">Galería</a>
             </li>
             <li class="nav-item">
+              <a type="application/rss+xml"href="Tesla_RSS.xml">
+                <i class="fas fa-rss"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="contact.html">Contacto</a>
             </li>
             <li class="nav-item">

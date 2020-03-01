@@ -65,65 +65,14 @@
       <div class="modal-content">
         <div>
           <i class="fas fa-times close"></i>
-          <h2 id="modal-header">Añadir oficina</h2>
+          <h2 id="modal-header">Gestión de oficinas</h2>
         </div>
 
         <!-- Form to add an office -->
         <form id="form-office">
           <div class="form-group">
-            <label for="office-id">ID:</label> <br />
-            <input type="number" name="office-id" id="office-id" placeholder="identificador" />
-          </div>
-          <div class="form-group">
-            <label for="place">Localización</label>
-            <select class="form-control" id="place">
-              <option value=""></option>
-              <option value="Las Palmas de G.C.">Las Palmas de G.C.</option>
-              <option value="Telde">Telde</option>
-              <option value="S.C. de Tenerife">S.C. de Tenerife</option>
-              <option value="Fuerteventura">Fuerteventura</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="admin">Encargado: </label>
-            <input
-              type="text"
-              class="form-control"
-              name="admin"
-              id=" admin"
-              placeholder="Encargado de la oficina"
-            />
-          </div>
-          <div class="form-group">
-            <label for="img">Logo sede: </label> <br />
-            <input type="file" accept="image/*" id="img" name="img" />
-            <label class="logo-check">
-              <input type="checkbox" class="form-check-input" id="nologo" name="nologo" /> Sin logo
-              de sede
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-success" id="add-button">Añadir</button>
-          <button type="reset" class="btn btn-danger" id="reset-btn">Cancelar</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- The Edit Modal -->
-    <div id="editModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div>
-          <i class="fas fa-times close"></i>
-          <h2 id="modal-header">Editar oficina</h2>
-        </div>
-
-        <!-- Form to add an office -->
-        <form id="form-office">
-          <div class="form-group">
-            <label for="office-id">ID:</label> <br />
-            <input type="number" name="office-id" id="office-id" placeholder="identificador" />
+            <label for="officeId">ID:</label> <br />
+            <input type="number" name="officeId" id="officeId" placeholder="identificador"/>
           </div>
           <div class="form-group">
             <label for="place">Localización</label>

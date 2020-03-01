@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<rss version='2.0'>
+  <channel>
+    <title>Tesla Roadster 2020</title>
+    <link>https://www.tesla.com/es_ES/roadster</link>
+    <description>Descubre el superdeportivo de Tesla</description>
+    <item>
+      <title>Tesla Energy</title>
+      <link>https://www.tesla.com/es_ES/energy</link>
+      <description>Tesla es algo más.</description>
+    </item>
+  </channel>
+</rss>

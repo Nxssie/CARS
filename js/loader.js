@@ -3,7 +3,6 @@ import { loadFooter } from './footer.js';
 import { findTreasure } from './game.js';
 import { officeList } from './office.js';
 import { loadModal } from './officeModal.js';
-//import { insertScripts } from "./insertFirebase.js";
 import { loadFirebase } from "./firebase.js";
 
 window.onload = initialize;

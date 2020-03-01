@@ -22,7 +22,7 @@ export function loadFooter() {
                 <li><a href="gallery.html">Galería</a></li>
                 <li><a href="contact.html">Contacto</a></li>
                 <li><a href="game.html">Minijuego</a></li>
-                <li><a href="office.html">Oficinas</a></li>
+                <li><a href="offices.html">Oficinas</a></li>
               </ul>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
