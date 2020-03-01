@@ -9,6 +9,7 @@ import { loadFirebase } from "./firebase.js";
 window.onload = initialize;
 
 function initialize() {
+  loadFirebase();
   document.getElementById("navbar-top").innerHTML = loadNavbar();
   document.getElementById("page-footer").innerHTML = loadFooter();
 
@@ -25,7 +26,6 @@ function initialize() {
   }
 
   if (document.getElementById("offices-table")) {
-    loadFirebase();
     officeList();
     loadModal();
   }

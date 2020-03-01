@@ -33,3 +33,9 @@ export let loadModal = () => {
     modal.style.display = "none";
   };
 };
+
+export let loadEditModal = () => {
+
+
+
+};

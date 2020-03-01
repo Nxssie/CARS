@@ -1,5 +1,9 @@
 //Main const
-//const formOffice = document.getElementById("form-offices");
+let ADD = "add";
+let UPDATE = "update";
+let action = UPDATE;
+let keyOffice;
+
 
 // Exported function to load it from loader.js
 export let officeList = () => {
@@ -19,36 +23,71 @@ let downloadOffices = () => {
 */
 let addOrUpdateOffice = (event) => {
   event.preventDefault();
-
   var formOffice = event.target;
-
-  console.log(formOffice)
+  console.log(formOffice);
   let id = formOffice["office-id"].value;
   let place = formOffice.place.value;
   let admin = formOffice.admin.value;
+  let defaultLogo = "img/tesla_icon.png"
 
-  let file = formOffice.img.files[0];
-  let fileName = file.name;
-
-  //adding part
-  let ref = firebase.storage().ref().child(fileName);
-  ref.put(file).then(function (snapshot) {
-    console.log('Uploaded file!');
-    console.log(id);
-    ref.getDownloadURL().then(function (url) {
-
+  if (action == ADD) {
+    //adding part
+    if (formOffice.nologo.checked) {
       var refOffice = firebase.database().ref().child("offices");
       refOffice.push({
         id: id,
         place: place,
         admin: admin,
-        img: url
+        img: defaultLogo
       });
-    }).catch(function (error){
-      console.log(error);
-    });
-  });
-  formOffice.reset();
+    } else {
+      var file = formOffice.img.files[0];
+      var fileName = file.name;
+      let ref = firebase.storage().ref().child(fileName);
+      ref.put(file).then(function (snapshot) {
+        console.log('Uploaded file!');
+        ref.getDownloadURL().then(function (url) {
+          var refOffice = firebase.database().ref().child("offices");
+          refOffice.push({
+            id: id,
+            place: place,
+            admin: admin,
+            img: url
+          });
+        }).catch(function (error) {
+          console.log(error);
+        });
+      });
+      formOffice.reset();
+    }
+  } else {
+    let refOfficeToEdit = firebase.database().ref("offices" + keyItem);
+      
+      let ref = firebase.storage().ref().child(fileName);
+      ref.put(file).then(function (snapshot) {
+        console.log('Uploaded a blob or file!');
+
+        ref.getDownloadURL().then(function (url) {
+
+          refOfficeToEdit.update({
+            type: formItem.type.value,
+            stock: formItem.stock.value,
+            price: formItem.price.value,
+            image_url: url
+          });
+        }).catch(function (error) {
+          // Handle any errors
+        });
+      });
+
+      editButton.style.display = "none";
+      cancelButton.style.display = "none";
+      createButton.style.display = "inline-block";
+
+      formItem.reset();
+  }  
+
+
 
   //updating part
 
@@ -85,8 +124,8 @@ let showOffices = (snap) => {
       data[key].admin +
       "</td>" +
       "<td>" +
-      '<img data-office-id="'+ key + '" class="img-fluid imgOnDb" src="' +
-                                        data[key].img + 'alt="image"/>' +
+      '<img data-office-id="' + key + '" class="img-fluid imgOnDb" src="' +
+      data[key].img + '"alt="image"/>' +
       "</td>" +
       '<td> <i class="fas fa-trash-alt remover" data-office="' +
       key +
@@ -94,7 +133,7 @@ let showOffices = (snap) => {
       key +
       '"></i> </td>' +
       "</tr>";
-      
+
   }
 
   let myOfficesList = document.getElementById("my-offices-list");

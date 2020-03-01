@@ -2,3 +2,8 @@
 .logo-check{
   margin-left: 2em;
 }
+
+.imgOnDb {
+  max-height: 5em;
+  max-width: 5em;
+}
