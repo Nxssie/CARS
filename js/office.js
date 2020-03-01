@@ -1,10 +1,10 @@
 //Main const
-const formOffice = document.getElementById("form-offices");
+//const formOffice = document.getElementById("form-offices");
 
 // Exported function to load it from loader.js
 export let officeList = () => {
+  captureFormSubmit();
   downloadOffices();
-
 }
 
 // The function to download the offices uploaded to firebase database
@@ -13,31 +13,58 @@ let downloadOffices = () => {
   officesRef.on("value", showOffices);
 }
 
+
 /* Are we uploading data? Yes, we are
   This function is for adding or updating some office in our db
 */
-let addOrUpdateOffice = () => {
-  let file = formOffice.image.files[0];
+let addOrUpdateOffice = (event) => {
+  event.preventDefault();
+
+  var formOffice = event.target;
+
+  console.log(formOffice)
+  let id = formOffice["office-id"].value;
+  let place = formOffice.place.value;
+  let admin = formOffice.admin.value;
+
+  let file = formOffice.img.files[0];
   let fileName = file.name;
 
   //adding part
-  var refOffice = firebase.database().ref("offices");
-  let ref = firebase.storage().ref().child(fileName0);
+  let ref = firebase.storage().ref().child(fileName);
   ref.put(file).then(function (snapshot) {
     console.log('Uploaded file!');
+    console.log(id);
     ref.getDownloadURL().then(function (url) {
+
+      var refOffice = firebase.database().ref().child("offices");
       refOffice.push({
-        id: formOffice.id.value,
-        place: formOffice.place.value,
-        admin: image_url
-      })
-    })
-  })
+        id: id,
+        place: place,
+        admin: admin,
+        img: url
+      });
+    }).catch(function (error){
+      console.log(error);
+    });
+  });
+  formOffice.reset();
 
   //updating part
 
 
 }
+
+let debugging = (event) => {
+  event.preventDefault();
+  console.log("hola");
+
+}
+
+let captureFormSubmit = () => {
+  document.getElementById("form-office").addEventListener("submit", addOrUpdateOffice);
+}
+
 
 //Visualizing the offices
 let showOffices = (snap) => {
@@ -52,14 +79,14 @@ let showOffices = (snap) => {
       data[key].id +
       "</td>" +
       "<td>" +
-      data[key].location +
+      data[key].place +
       "</td>" +
       "<td>" +
       data[key].admin +
       "</td>" +
       "<td>" +
       '<img data-office-id="'+ key + '" class="img-fluid imgOnDb" src="' +
-                                        data[key].image_url + 'alt="image"/>' +
+                                        data[key].img + 'alt="image"/>' +
       "</td>" +
       '<td> <i class="fas fa-trash-alt remover" data-office="' +
       key +
@@ -78,7 +105,7 @@ let showOffices = (snap) => {
   var editors = document.getElementsByClassName("editor");
   for (var i = 0; i < removers.length; i++) {
     removers[i].addEventListener("click", deleteOffice);
-    editors[i].addEventListener("click", editItem);
+    //editors[i].addEventListener("click", editItem);
   }
 }
 

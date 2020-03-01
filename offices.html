@@ -50,27 +50,6 @@
           <!-- here goes the database content -->
         </tbody>
       </table>
-
-      <form id="form-offices">
-        <div class="form-group">
-          <label for="type">Nº Oficina</label>
-          <input type="text" class="form-control" id="type" name="type" />
-          <span id="type-error">* Tipo de producto no válido.</span>
-        </div>
-        <div class="form-group">
-          <label for="stock">Localizacion</label>
-          <input type="number" class="form-control" id="stock" name="stock" />
-          <span id="stock-error">* Stock de producto no válido.</span>
-        </div>
-        <div class="form-group">
-          <label for="price">Encargado</label>
-          <input type="number" class="form-control" id="price" name="price" />
-          <span id="price-error">* Precio de producto no válido.</span>
-        </div>
-        <button id="create-element" type="submit" class="btn btn-primary">Create an Item</button>
-        <button id="edit-element" type="submit" class="btn btn-primary">Update an Item</button>
-        <button id="cancel-button" type="reset" class="btn btn-secondary">Cancel</button>
-      </form>
     </div>
 
     <div class="container">
@@ -89,18 +68,39 @@
         </div>
 
         <!-- Form to add an office -->
-        <form action="">
+        <form id="form-office">
           <div class="form-group">
-            <label for="place">Localización: </label>
-            <input type="text" class="form-control" name="form-place" id="form-place" placeholder="Localización de la oficina"/>
+            <label for="office-id">ID:</label> <br />
+            <input type="number" name="office-id" id="office-id" placeholder="identificador" />
           </div>
+          <div class="form-group">
+            <label for="place">Localización</label>
+            <select class="form-control" id="place">
+              <option value=""></option>
+              <option value="lpgc">Las Palmas de G.C.</option>
+              <option value="telde">Telde</option>
+              <option value="tnf">S.C. Tenerife</option>
+              <option value="ftv">Fuerteventura</option>
+            </select>
+          </div>
+
           <div class="form-group">
             <label for="admin">Encargado: </label>
-            <input type="text" class="form-control" name="form-admin" id="form-admin" placeholder="Encargado de la oficina">
+            <input
+              type="text"
+              class="form-control"
+              name="admin"
+              id=" admin"
+              placeholder="Encargado de la oficina"
+            />
           </div>
           <div class="form-group">
-            <label for="image">Logo sede: </label> <br/>
-            <input type="file" name="form-image" id="form-image">
+            <label for="img">Logo sede: </label> <br />
+            <input type="file" accept="image/*" id="img" name="img" />
+            <label class="logo-check">
+              <input type="checkbox" class="form-check-input" id="nologo" name="nologo" /> Sin logo
+              de sede
+            </label>
           </div>
 
           <button type="submit" class="btn btn-success" id="add-button">Añadir</button>
