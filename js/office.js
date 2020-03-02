@@ -73,6 +73,7 @@ let validateOfficeForm = (event) => {
   This function is for adding or updating some office in our db
 */
 let addOrUpdateOffice = () => {
+  document.getElementById("myModal").style.display = "none";
   let formOffice = document.getElementById("form-office");
   console.log(formOffice);
   let id = formOffice.officeId.value;
@@ -154,7 +155,15 @@ let addOrUpdateOffice = () => {
 }
 
 let captureFormSubmit = () => {
-  document.getElementById("form-office").addEventListener("submit", validateOfficeForm);
+  firebase.auth().onAuthStateChanged(function (user) {
+    for (let i = 0; i < admins.length; i++) {
+      if (user.uid == admins[i]) {
+        document.getElementById("form-office").addEventListener("submit", validateOfficeForm);
+      } else {
+        console.log("You are not and admin user, so you haven't the required permission. (WIP)");
+      }
+    }
+  });
 }
 
 // Deleting offices by capturing office key
@@ -233,16 +242,16 @@ let showOffices = (snap) => {
         for (let j = 0; j < admins.length; j++) {
           if (user.uid == admins[j]) {
             // User actions 
-            var removers = document.getElementsByClassName("remover");
-            var editors = document.getElementsByClassName("editor");
+            let removers = document.getElementsByClassName("remover");
+            let editors = document.getElementsByClassName("editor");
             for (var i = 0; i < removers.length; i++) {
               removers[i].addEventListener("click", deleteOffice);
               editors[i].addEventListener("click", editOffice);
             }
-          } else {
+          } else if(user.uid != admins[j]) {
             // User advices
-            var removers = document.getElementsByClassName("remover");
-            var editors = document.getElementsByClassName("editor");
+            let removers = document.getElementsByClassName("remover");
+            let editors = document.getElementsByClassName("editor");
             for (var i = 0; i < removers.length; i++) {
               removers[i].addEventListener("click", showAdvice);
               editors[i].addEventListener("click", showAdvice);
