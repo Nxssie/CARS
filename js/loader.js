@@ -3,6 +3,7 @@ import { loadFooter } from './footer.js';
 import { findTreasure } from './game.js';
 import { officeList } from './office.js';
 import { loadModal } from './officeModal.js';
+import * as auth from "./auth.js";
 import { loadFirebase } from "./firebase.js";
 
 window.onload = initialize;
@@ -11,6 +12,18 @@ function initialize() {
   loadFirebase();
   document.getElementById("navbar-top").innerHTML = loadNavbar();
   document.getElementById("page-footer").innerHTML = loadFooter();
+  auth.userLogout();
+  auth.loggedCheck();
+  
+  if (document.getElementById("user-login")) {
+    const userLoginForm = document.getElementById("user-login");
+    userLoginForm.addEventListener("submit", auth.userLogin);
+  }
+
+  if (document.getElementById("user-register")) {
+    const userRegisterForm = document.getElementById("user-register");
+    userRegisterForm.addEventListener("submit", auth.userRegister);
+  }
 
   const emailSub = document.getElementById("emailSub");
   emailSub.addEventListener("submit", validateAndSendEmail);

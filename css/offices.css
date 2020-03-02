@@ -7,3 +7,31 @@
   max-height: 5em;
   max-width: 5em;
 }
+
+#id-error {
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+}
+
+#place-error {
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+}
+
+#admin-error {
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+}
+
+#logo-error {
+  display: none;
+  color: red;
+  font-style: oblique;
+  font-size: 11px;
+}

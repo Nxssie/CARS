@@ -27,22 +27,12 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar-top"></nav>
 
-    <div class="container">
-      <form id="user-login">
-        <div class="form-group">
-          <label for="user-email">Email</label>
-          <input type="email" name="user-email" id="user-email" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label for="user-email">Contraseña</label>
-          <input type="password" name="user-password" id="user-password" class="form-control"/>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Login</button>
-
-        <p>Usuario nuevo? <a href="register.html">Regístrate</a></p>
-
-      </form>
+    <div class="container shadow-none p-3 mb-5 bg-light rounded" id="profileContainer">
+      <h2>Datos del usuario</h2> <br/>
+      <p>User ID: </p>
+      <p id="UID"></p>
+      <p>Email: </p>
+      <p id="userEmail"></p>
     </div>
 
     <!-- Footer-->
