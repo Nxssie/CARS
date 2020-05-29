@@ -60,8 +60,6 @@ export let loggedCheck = () => {
         document.getElementById("UID").innerHTML = user.uid;
         document.getElementById("userEmail").innerHTML = user.email;
       }
-      
-      
     } else {
       console.log("There's no user logged");
       document.getElementById("login-entry").style.display="block";
